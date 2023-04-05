@@ -46,18 +46,18 @@
     const CATS_API_URL = '/cats-api/image';
     const DOGS_API_URL = '/dogs-api/image';
     function handleButtonClick(apiUrl, thumbnailId, captionId) {
-        fetch(apiUrl)
-          .then(response => {
-              return response.json()
-          })
-          .then(data => {
-              console.log(data)
-              const thumbnail = document.getElementById(thumbnailId);
-              const caption = document.getElementById(captionId);
-              thumbnail.src = response.imageUrl;
-              caption.textContent = response.containerIp;
-          })
-          .catch(error => console.error(error));
+      fetch(apiUrl)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+          console.log(data)
+          const thumbnail = document.getElementById(thumbnailId);
+          const caption = document.getElementById(captionId);
+          thumbnail.src = data.imageUrl;
+          caption.textContent = data.containerIp;
+        })
+        .catch(error => console.error(error));
     }
   document.getElementById('cats-button').addEventListener('click', function() {
     handleButtonClick(CATS_API_URL, 'cats-thumnail', 'cats-caption');
