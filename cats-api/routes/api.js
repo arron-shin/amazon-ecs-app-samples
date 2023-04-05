@@ -8,7 +8,7 @@ router.get('/container-ip', (req, res) => {
 });
 
 router.get('/image', (req, res) => {
-  const imgArrayUrls = Array.from({ length: 10 }, (_, i) => `https://ecs-demogo-pictures.s3.ap-northeast-2.amazonaws.com/cats/${i}.jpeg`);
+  const imgArrayUrls = Array.from({ length: 10 }, (_, i) => `https://ecs-demogo-pictures.s3.ap-northeast-2.amazonaws.com/cat/${i}.jpeg`);
   const randomimgArrayUrl = imgArrayUrls[Math.floor(Math.random() * imgArrayUrls.length)];
   const serverIP = os.networkInterfaces().eth0[0].address;
   const responseData = {
