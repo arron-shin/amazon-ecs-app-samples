@@ -51,7 +51,7 @@
             const thumbnail = document.getElementById(thumbnailId);
             const caption = document.getElementById(captionId);
             thumbnail.src = response.imageUrl;
-            caption.textContent = response.imageCaption;
+            caption.textContent = response.containerIp;
         })
         .catch(error => console.error(error));
     }
