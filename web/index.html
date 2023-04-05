@@ -43,8 +43,8 @@
     </div>
 <script>
     document.querySelector('#one h1').textContent = window.location.href;
-    const CATS_API_URL = 'http://cats-api.service-connect.me/api/image';
-    const DOGS_API_URL = 'http://dogs-api.service-connect.me/api/image';
+    const CATS_API_URL = 'http://cats-api.service-connect.me:3000/api/image';
+    const DOGS_API_URL = 'http://dogs-api.service-connect.me:3000/api/image';
     function handleButtonClick(apiUrl, thumbnailId, captionId) {
         fetch(apiUrl)
         .then(response => {
